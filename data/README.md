@@ -1,5 +1,14 @@
-# Dataset
+# Data
 
-`sample_imdb_reviews.csv` is a small, balanced IMDb-style review sample included only to let the project train and run immediately. It has `review` and `sentiment` columns and is not intended to represent full IMDb benchmark performance.
+Nothing large is committed. These files are created by the ML scripts:
 
-For a stronger portfolio result, download the [IMDb Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews), save it as `data/imdb_dataset.csv`, and update `DATA_PATH` in `ml/train.py` to point to that file. Do not commit the large downloaded CSV.
+| Path | Created by | Contents |
+| --- | --- | --- |
+| `raw/aclImdb_v1.tar.gz` | `python -m ml.download_data` | [Stanford Large Movie Review Dataset](https://ai.stanford.edu/~amaas/data/sentiment/) (Maas et al., 2011) |
+| `raw/title.basics.tsv.gz` | `python -m ml.download_data` | [IMDb title list](https://developer.imdb.com/non-commercial-datasets/), used for movie names and years |
+| `aclImdb/` | `python -m ml.download_data` | The extracted review text files |
+| `processed/reviews.csv.gz` | `python -m ml.prepare_data` | One row per review: split, imdb_id, stars, label, text |
+| `processed/movies.csv` | `python -m ml.prepare_data` | imdb_id, title, year |
+
+aclImdb is distributed for research use (cite Maas et al., 2011). The IMDb title list is for
+personal and non-commercial use only.

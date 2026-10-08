@@ -1,5 +1,21 @@
-Accuracy: 0.8800
-Precision: 0.8462
-Recall: 0.9167
-F1 Score: 0.8800
-Test samples: 25
+Model: TF-IDF + Logistic Regression (C=2)
+Test set: 24655 reviews of movies not used in training
+
+Accuracy:  0.8922
+Precision: 0.8927
+Recall:    0.8929
+F1-score:  0.8928
+
+              precision    recall  f1-score   support
+
+    negative     0.8917    0.8915    0.8916     12260
+    positive     0.8927    0.8929    0.8928     12395
+
+    accuracy                         0.8922     24655
+   macro avg     0.8922    0.8922    0.8922     24655
+weighted avg     0.8922    0.8922    0.8922     24655
+
+Movie-level check (1594 test movies with at least 5 reviews)
+  Average error of estimated rating vs reviewers' real stars: 0.76 stars
+  (using the share of positive reviews instead: 0.91 stars)
+  Good/Average/Bad verdict matches the verdict from real stars: 87.5%
